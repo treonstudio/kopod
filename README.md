@@ -1,31 +1,84 @@
-# KOPOD
+<div align="center"><a name="readme-top"></a>
 
-## Template Integrations
-- Tailwind CSS v4 Beta 
-- Astro SEO - Powered by [@astrolib/seo](https://github.com/onwidget/astrolib/tree/main/packages/seo)
-- Astro Sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
+<a href="https://kopod.treonstudio.com">
+  <img src="https://github.com/user-attachments/assets/6cfe4e80-6965-412f-8bbc-2c31f03829c6" width="120" alt="Kopod Logo">
+</a>
 
-## Template Structure
+# Kopod
 
-The template follows a typical Astro project structure. You'll find the following key directories and files:
+Kopod is a technology podcast platform from Indonesia, featuring authentic and insightful conversations about technology, startups, and digital culture. Each episode brings stories, inspiration, and knowledge from Indonesian creators, professionals, and startup founders—delivered in a relatable and community-driven style.
 
+[Official Site][official-site] · [Anchor][anchor] · [Spotify][spotify] · [Soundcloud][soundcloud] · [Feedback][github-issues-link]
+
+[![][share-x-shield]][share-x-link]
+[![][share-telegram-shield]][share-telegram-link]
+[![][share-whatsapp-shield]][share-whatsapp-link]
+[![][share-reddit-shield]][share-reddit-link]
+[![][share-linkedin-shield]][share-linkedin-link]
+
+![][image-overview]
+
+</div>
+---
+
+## What is Kopod?
+Kopod connects the voices of Indonesia's tech ecosystem. We believe that real stories and experiences from the local community can inspire, educate, and broaden the horizons of anyone passionate about the digital world.
+
+- **Mission:** Share knowledge, experience, and inspiration from Indonesia's tech scene in a relevant and accessible way.
+- **Vision:** Become the most influential digital platform for the Indonesian tech community.
+- **Values:** Authentic, inclusive, humble, and community-focused.
+
+> **"Kopod connects Indonesia’s tech voices—real stories, real people, real impact."**
+
+---
+
+## Tech Stack
+- **pnpm** (package manager)
+- **Astro** (modern static site generator)
+- **React** (UI components)
+
+---
+
+## Project Structure
+
+The project uses a simple Astro structure:
 
 ```
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   └── components/
 └── package.json
 ```
 
-- `src/pages/`: Contains `.astro` and `.md` files. Each file becomes a route in your project based on its name.
-- `src/components/`: Ideal for placing your Astro/React/Vue/Svelte/Preact components.
-- `public/`: For static assets such as images that you want to serve directly.
+- `src/pages/`: Main pages and podcast content
+- `src/components/`: Astro/React components
+- `public/`: Static assets (images, etc.)
 
-## Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Getting Started
+
+Run the following commands from the project root:
+
+```bash
+pnpm install      # Install dependencies
+pnpm dev          # Start development server
+pnpm build        # Build for production
+pnpm preview      # Preview the production build
+```
+
+---
+
+## Contributing
+We welcome contributions from the Indonesian tech community! For visual and brand guidelines, please refer to the following Figma document:
+
+👉 [Brand Guidelines on Figma](https://www.figma.com/) _(request access if you don't have it)_
+
+---
+
+Discover stories, inspiration, and lessons from Indonesia's tech world—only on Kopod.
 
 | Command                | Action                                           |
 | :--------------------- | :----------------------------------------------- |

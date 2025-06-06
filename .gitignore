@@ -1,0 +1,35 @@
+# Node
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Go
+bin/
+*.exe
+*.test
+*.out
+
+# VSCode
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Dependency directories
+dep/
+vendor/
+
+# Build output
+/dist
+/build
+
+# Others
+.idea/
+*.swp
