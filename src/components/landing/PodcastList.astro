@@ -1,0 +1,253 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Import JSON data
+import podcastsJson from "@/data/podcasts.json";
+
+// Process podcast data
+const podcastData = podcastsJson;
+---
+
+<Wrapper variant="standard">
+  <div
+    class="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 py-4 text-sm border-b border-neutral-200 dark:border-neutral-900 text-black dark:text-neutral-400 font-serif"
+  >
+    <div class="">Date</div>
+    <div class="md:col-span-3">Archive</div>
+    <div class="hidden md:block">Type</div>
+    <div class="text-right hidden md:block text-neutral-500">Duration</div>
+  </div>
+  <div class="project-list divide-y divide-neutral-200 dark:divide-neutral-900">
+    <!-- Project rows -->
+    {
+      podcastData.map((podcast, index) => (
+        <div class="group ">
+          <div class="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 font-serif py-4 cursor-pointer items-center ext-black dark:text-neutral-400">
+            <div>
+              <Text tag="p" variant="textBase" class="italic text-neutral-500 ">
+                {podcast.date}
+              </Text>
+            </div>
+            <div class="col-span-3">
+              <Text tag="p" variant="textBase" class="  tracking-wide">
+                {podcast.title}
+              </Text>
+            </div>
+            <div class="hidden md:block">
+              <Text tag="p" variant="textBase" class="italic">
+                {podcast.category}
+              </Text>
+            </div>
+            <div class="text-right text-neutral-500 hidden md:block italic">
+              <Text tag="p" variant="textBase">
+                {podcast.duration}
+              </Text>
+            </div>
+          </div>
+          <div class="overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 py-4 md:py-8">
+              <div class="md:col-span-2">
+                <Text
+                  tag="p"
+                  variant="textBase"
+                  class="text-neutral-500 text-balance"
+                >
+                  {podcast.description}
+                </Text>
+                <div class="mt-8">
+                  <div class="flex">
+                    <button
+                      id={`openModal-${index}`}
+                      class="text-xs h-10 bg-base-medium dark:bg-neutral-900 dark:text-white flex items-center gap-4 text-black rounded-full px-6"
+                    >
+                      Read notes and Transcript <span>→</span>
+                    </button>
+                  </div>
+                  <div class="mt-12">
+                    <Text
+                      tag="p"
+                      variant="textBase"
+                      class="text-black italic font-serif"
+                    >
+                      Listen on
+                    </Text>
+                    <Wrapper variant="prose">
+                      <ul role="list">
+                        {podcast.listenOn.map((platform) => (
+                          <li>
+                            <Text
+                              tag="a"
+                              variant="textSM"
+                              href={platform.url}
+                              class="hover:underline"
+                            >
+                              {platform.name}
+                            </Text>
+                          </li>
+                        ))}
+                      </ul>
+                    </Wrapper>
+                  </div>
+                </div>
+              </div>
+              <div class=" md:col-start-3">
+                <img
+                  src={`/src/images/${podcast.image}`}
+                  alt={podcast.title}
+                  class="w-full object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            id={`modal-${index}`}
+            class="fixed inset-0 z-50 bg-base-light/10 dark:bg-neutral-900/80 overflow-y-auto scrollbar-hide h-full w-full hidden opacity-0 transition-opacity duration-300 ease-in-out"
+          >
+            <div class="absolute top-12 left-0 right-0 max-w-3xl mx-auto bg-base-medium dark:bg-neutral-900 shadow ring ring-neutral-200 dark:ring-neutral-800 transition-all duration-300 ease-in-out transform translate-y-full">
+              <button
+                id={`closeModal-${index}`}
+                class="absolute top-8 right-8 text-xs text-black dark:text-neutral-400"
+              >
+                Close
+              </button>
+              <div class="p-8 lg:p-12">
+                <div class="flex items-center gap-2 texrt-black dark:text-neutral-400">
+                  <Text tag="p" variant="textBase" class="font-serif italic">
+                    <span>{podcast.date}</span>
+                  </Text>
+                  <span>·</span>
+                  <Text tag="p" variant="textBase" class="font-serif ">
+                    <span>{podcast.title}</span>
+                  </Text>
+                  <span>·</span>
+                  <Text tag="p" variant="textBase" class="font-serif italic">
+                    <span>{podcast.category}</span>
+                  </Text>
+                  <span>·</span>
+                  <Text tag="p" variant="textBase" class="font-serif italic">
+                    <span>{podcast.duration}</span>
+                  </Text>
+                </div>
+                <div class="grid grid-cols-1 mt-12 lg:grid-cols-2 gap-12">
+                  <Wrapper variant="prose">
+                    <div>
+                      <h3>Topics</h3>
+                      <ul>
+                        {podcast.topics.map((topic) => (
+                          <li>{topic}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3>Sponsors</h3>
+                      <ul>
+                        {podcast.sponsors.map((sponsor) => (
+                          <li>
+                            <strong>{sponsor.name}</strong> —
+                            {sponsor.description}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3>Links</h3>
+                      <ul>
+                        {podcast.links.map((link) => (
+                          <li>
+                            <a href={link.url} class="hover:underline">
+                              {link.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Wrapper>
+                  <Wrapper variant="prose">
+                    <h3>Transcript</h3>
+                    <ul>
+                      {podcast.transcript.map((entry) => (
+                        <li>
+                          <strong>{entry.speaker}:</strong> {entry.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </Wrapper>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Wrapper>
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    // Handle opening modals
+    document.querySelectorAll("[id^='openModal-']").forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = button.id.split("-")[1];
+        const modal = document.getElementById(`modal-${index}`);
+        const modalContent = modal.querySelector("div");
+        modal.classList.remove("hidden");
+        // Force a reflow to ensure the transition works
+        modal.offsetHeight;
+        modal.classList.add("opacity-100");
+        modalContent.classList.remove("translate-y-full");
+      });
+    });
+    // Handle closing modals
+    document.querySelectorAll("[id^='closeModal-']").forEach((button) => {
+      button.addEventListener("click", () => {
+        const index = button.id.split("-")[1];
+        const modal = document.getElementById(`modal-${index}`);
+        const modalContent = modal.querySelector("div");
+        modal.classList.remove("opacity-100");
+        modalContent.classList.add("translate-y-full");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      });
+    });
+    // Handle clicking outside modals
+    document.querySelectorAll("[id^='modal-']").forEach((modal) => {
+      modal.addEventListener("click", (e) => {
+        if (e.target === e.currentTarget) {
+          const modalContent = modal.querySelector("div");
+          modal.classList.remove("opacity-100");
+          modalContent.classList.add("translate-y-full");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectRows = document.querySelectorAll(".group");
+    projectRows.forEach((row) => {
+      const clickableArea = row.querySelector(".grid");
+      const content = row.querySelector(".overflow-hidden");
+      clickableArea.addEventListener("click", () => {
+        // Close all other project rows
+        projectRows.forEach((otherRow) => {
+          if (otherRow !== row) {
+            const otherContent = otherRow.querySelector(".overflow-hidden");
+            otherRow.classList.remove("active");
+            otherContent.style.maxHeight = "0";
+          }
+        });
+        // Toggle current project row
+        row.classList.toggle("active");
+        if (row.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = "0";
+        }
+      });
+    });
+  });
+</script>

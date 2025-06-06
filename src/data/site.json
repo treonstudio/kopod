@@ -1,0 +1,22 @@
+{
+  "title": "KOPOD",
+  "description": "A detailed description of your page content.",
+  "url": "https://kopod.treonstudio.com",
+  "language": "en_US",
+  "author": "treon people",
+  "keywords": ["keyword1", "keyword2", "keyword3"],
+  "ogImages": [
+    {
+      "url": "https://kopod.treonstudio.com/og-image.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "Open Graph Image Alt",
+      "type": "image/jpeg"
+    }
+  ],
+  "twitter": {
+    "handle": "@treonstudio",
+    "site": "@treonstudio",
+    "cardType": "summary_large_image"
+  }
+}

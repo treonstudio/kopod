@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import siteConfig from "../data/site.json";
+---
+
+<!-- Character Set and Viewport -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Basic Meta Tags -->
+<title>{siteConfig.title}</title>
+<meta name="description" content={siteConfig.description} />
+<meta name="keywords" content={siteConfig.keywords.join(", ")} />
+<meta name="author" content={siteConfig.author} />
+<link rel="canonical" href={`${siteConfig.url}/current-page`} />
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.png" sizes="any" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+<!-- Favicon for IE -->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+<!-- Favicons for different sizes -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={siteConfig.url} />
+<meta property="og:title" content={siteConfig.title} />
+<meta
+  property="og:description"
+  content={siteConfig.description}
+/>
+<meta
+  property="og:image"
+  content={siteConfig.ogImages[0].url}
+/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content={siteConfig.twitter.cardType} />
+<meta property="twitter:url" content={siteConfig.url} />
+<meta property="twitter:title" content={siteConfig.title} />
+<meta
+  property="twitter:description"
+  content={siteConfig.description}
+/>
+<meta
+  property="twitter:image"
+  content={siteConfig.ogImages[0].url}
+/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href={siteConfig.url} />
+
+<!-- Additional SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Theme Color for Mobile Browsers -->
+<meta name="theme-color" content="#ffffff" />
+
+<!-- For IE -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!--- Typography -->
+<!--- 
+Instrument Serif: Google Fonts
+Inter: Rasmus CDN
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>

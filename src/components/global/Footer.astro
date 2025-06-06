@@ -1,0 +1,103 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<footer>
+  <footer class="text-xs pb-8 pt-48">
+    <Wrapper class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div class="gap-4 flex flex-col">
+        <div class="gap-1 flex flex-col">
+          <Text
+            tag="p"
+            variant="textSM"
+            class="font-serif italic text-black dark:text-neutral-500"
+            >Follow us on</Text
+          >
+          <Text
+            tag="a"
+            variant="textXS"
+            href="#_"
+            class="dark:text-neutral-500 underline">Twitter</Text
+          >
+        </div>
+        <div class="gap-1 flex flex-col">
+          <Text
+            tag="p"
+            variant="textSM"
+            class="font-serif italic text-black dark:text-neutral-500"
+            >Add us on</Text
+          >
+          <Text
+            tag="a"
+            variant="textXS"
+            href="#_"
+            class="dark:text-neutral-500 underline">LinkedIn</Text
+          >
+        </div>
+      </div>
+      <div>
+        <Text
+          tag="p"
+          variant="textBase"
+          class="font-serif italic text-black dark:text-white">Privacy</Text
+        >
+        <Text tag="p" variant="textXS" class="text-neutral-500 mt-1">
+          Your privacy is important to us. We avoid invasive practices such as
+          data tracking, fingerprinting, or sharing your information with third
+          parties. Instead, we use
+          <a href="#_" class="dark:text-neutral-500 text-black underline"
+            >Umami</a
+          >, an open-source, cookie-free analytics tool that prioritizes your
+          privacy by not collecting personal data.
+        </Text>
+      </div>
+      <div>
+        <Text
+          tag="p"
+          variant="textBase"
+          class="font-serif italic text-black dark:text-white">Colophon</Text
+        >
+        <Text tag="p" variant="textXS" class="text-neutral-500 mt-1">
+          This site uses Instrument Serif and Inter font. The frontend code is
+          built with Astro &amp; Tailwind CSS.
+          <a href="#_" class="dark:text-neutral-500 text-black underline"
+            >open source</a
+          >
+          and available online.
+        </Text>
+      </div>
+      <div>
+        <Text
+          tag="p"
+          variant="textBase"
+          class="font-serif italic text-black dark:text-white">Thank you</Text
+        >
+        <Text tag="p" variant="textXS" class="text-neutral-500 mt-1">
+          The web is a big, big place with lots of people, places, and things to
+          see. Thanks for visiting our little corner of the internet.
+        </Text>
+      </div>
+      <Text
+        tag="p"
+        variant="textBase"
+        class="flex flex-col text-black font-serif gap-1 italic"
+        >Copyright
+        <span class="text-neutral-500 text-xs"
+          >© 2023 – <span id="current-year"></span> Kopod by treonstudio</span
+        ></Text
+      >
+    </Wrapper>
+  </footer>
+</footer>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const yearElement = document.getElementById("current-year");
+    const currentYear = new Date().getFullYear();
+    if (yearElement) {
+      yearElement.textContent = currentYear;
+    }
+  });
+</script>

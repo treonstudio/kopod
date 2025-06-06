@@ -1,0 +1,35 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+/// Podcasts platforms links
+const links = [
+  { name: "Anchor", href: "#_" },
+  { name: "Soundcloud", href: "#_" },
+  { name: "Youtube", href: "#_" },
+];
+---
+
+<Wrapper variant="standard" class="pb-24">
+  <div
+    class="flex items-center justify-between text-gray-medium dark:text-base-medium"
+  >
+    <Text tag="p" variant="textBase" class="font-serif italic uppercase">
+      streamer</Text
+    >
+    <div class="flex gap-4 items-center">
+      {
+        links.map((link) => (
+          <Text
+            tag="a"
+            href={link.href}
+            variant="textBase"
+            class="font-serif italic"
+          >
+            {link.name}
+          </Text>
+        ))
+      }
+    </div>
+  </div>
+</Wrapper>
