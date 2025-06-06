@@ -8,13 +8,13 @@
 
 Kopod is a technology podcast platform from Indonesia, featuring authentic and insightful conversations about technology, startups, and digital culture. Each episode brings stories, inspiration, and knowledge from Indonesian creators, professionals, and startup founders—delivered in a relatable and community-driven style.
 
-[Official Site][official-site] · [Anchor][anchor] · [Spotify][spotify] · [Soundcloud][soundcloud] · [Feedback][github-issues-link]
+[Official Site](https://kopod.treonstudio.com) · [Anchor](https://anchor.fm/kopod) · [Spotify](https://open.spotify.com/show/kopod) · [Soundcloud](https://soundcloud.com/kopod) · [Feedback](https://github.com/Treon-Studio/kopod/issues)
 
-[![][share-x-shield]][share-x-link]
-[![][share-telegram-shield]][share-telegram-link]
-[![][share-whatsapp-shield]][share-whatsapp-link]
-[![][share-reddit-shield]][share-reddit-link]
-[![][share-linkedin-shield]][share-linkedin-link]
+[![](https://img.shields.io/badge/Share-X-blue?logo=x)](https://x.com/intent/tweet?text=Check+out+Kopod+Tech+Podcast+from+Indonesia!+https://kopod.treonstudio.com)
+[![](https://img.shields.io/badge/Share-Telegram-blue?logo=telegram)](https://t.me/share/url?url=https://kopod.treonstudio.com)
+[![](https://img.shields.io/badge/Share-WhatsApp-green?logo=whatsapp)](https://wa.me/?text=Check+out+Kopod+Tech+Podcast+from+Indonesia!+https://kopod.treonstudio.com)
+[![](https://img.shields.io/badge/Share-Reddit-orange?logo=reddit)](https://reddit.com/submit?url=https://kopod.treonstudio.com&title=Kopod+Tech+Podcast+from+Indonesia)
+[![](https://img.shields.io/badge/Share-LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/sharing/share-offsite/?url=https://kopod.treonstudio.com)
 
 ![][image-overview]
 
