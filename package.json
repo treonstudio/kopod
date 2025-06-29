@@ -1,25 +1,39 @@
 {
-  "name": "@theme/streamer",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "@treonstudio/kopod",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "astro": "astro",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrolib/seo": "^1.0.0-beta.8",
-    "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.1.10",
-    "js-yaml": "^4.1.0",
-    "tailwind-scrollbar-hide": "^2.0.0"
+    "@emailjs/browser": "^4.4.1",
+    "axios": "^1.7.4",
+    "bad-words": "^4.0.0",
+    "framer-motion": "^11.0.12",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-calendar": "^5.1.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.6",
+    "react-icons": "^5.0.1",
+    "webamp": "^1.5.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
-    "tailwindcss": "^4.0.0"
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.1.1",
+    "vite": "^5.0.8"
   }
 }

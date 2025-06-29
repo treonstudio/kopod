@@ -1,35 +1,24 @@
-# Node
-node_modules/
-.env
-.DS_Store
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Go
-bin/
-*.exe
-*.test
-*.out
+node_modules
+dist
+dist-ssr
+*.local
 
-# VSCode
-.vscode/
-
-# OS
-Thumbs.db
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-
-# Logs
-*.log
-
-# Dependency directories
-dep/
-vendor/
-
-# Build output
-/dist
-/build
-
-# Others
-.idea/
-*.swp
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
