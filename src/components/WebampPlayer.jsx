@@ -26,12 +26,15 @@ const WebampPlayer = () => {
                 const options = {
                     initialTracks: [{
                         metaData: {
-                            artist: "Rick Astley",
-                            title: "Never Gonna Give You Up"
+                            artist: "Treon Studio",
+                            title: "Eps 1 - Berkenalan dengan Backend"
                         },
-                        url: mp3,
+                        url: "https://audio.jukehost.co.uk/PLGFwFQHkylKrLVDF7kCxUxk9FXbC82y",
                         duration: 213
                     }],
+                    initialSkin: {
+                        url: '/skin.wsz',
+                      },
                     zIndex: 999
                 };
                 const webamp = new Webamp(options);

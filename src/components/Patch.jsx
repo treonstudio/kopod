@@ -119,30 +119,29 @@ function Patch() {
                     <h1>About us.</h1> 
             </div>
             <div className="patch_log">
-  <p>
-    <strong>KOPOD</strong> lahir dari pertanyaan simple: kenapa obrolan paling seru tentang dunia digital selalu terjadi di coffee shop atau co-working space, tapi gak pernah ke-record buat orang lain?<br/>
-    Sering banget ketemu sama talents yang punya cerita gila—coders yang belajar programming dari YouTube terus sekarang kerja remote buat perusahaan luar, designers yang portfolionya viral di socmed, data analysts yang insights-nya ngubah strategi bisnis besar. Tapi cerita mereka cuma beredar di circle sendiri.
-  </p>
-  <br/>
-  <br/>
-  <p>
-    <strong>Host:</strong> Ridho Pratama<br/>
-    <strong>Co-host:</strong> Yute October
-  </p>
-  <p>
-    Dengarkan episode terbaru di Spotify:<br/>
-    <a href="https://open.spotify.com/show/68Qxbxj9lmsyxOI6vlG2m8" target="_blank" rel="noopener noreferrer" style={{ color: '#1DB954', fontWeight: 'bold', textDecoration: 'underline' }}>
-      KOPOD Podcast di Spotify
+  <h2 style={{ fontSize: '1.1em', marginBottom: '0.5em' }}>KOPOD: Kode Podcast – Kupas Tuntas, Inspirasi Tanpa Batas!</h2>
+  <p>Halo, para developer, programmer, dan tech enthusiast di seluruh Indonesia! Selamat datang di <strong>KOPOD (Kode Podcast)</strong>, podcast yang akan jadi teman setia kamu dalam menyelami samudra luas dunia teknologi, engineering, dan tren pemrograman terkini. <strong>KOPOD</strong> adalah inisiatif dari <strong>Treon Studio</strong>, sebuah studio software inovatif yang berdedikasi menjadi mitra teknologi untuk pertumbuhan bisnis.</p>
+  <ul style={{ margin: '0 0 1em 1.2em', padding: 0 }}>
+    <li><strong>Teknologi Terbaru:</strong> Dari AI, Machine Learning, Blockchain, hingga Cloud Computing, kami akan mengupas tuntas apa saja yang lagi hangat dan gimana teknologi ini membentuk masa depan kita.</li>
+    <li><strong>Engineering Insights:</strong> Selami dunia rekayasa perangkat lunak, arsitektur sistem, best practices dalam coding, dan strategi pengembangan yang efisien dari para pakar di bidangnya.</li>
+    <li><strong>Tren Pemrograman:</strong> Ikuti perkembangan bahasa pemrograman, framework, dan tool yang wajib kamu kuasai untuk tetap relevan di industri yang bergerak cepat ini.</li>
+    <li><strong>Karier & Pengembangan Diri:</strong> Dapatkan tips dan trik untuk meningkatkan skill, membangun portofolio, hingga menavigasi karier di dunia teknologi yang dinamis.</li>
+  </ul>
+  <p>Bareng para narasumber inspiratif, mulai dari praktisi industri, developer sukses, hingga inovator terkemuka, KOPOD akan jadi sumber wawasan yang tak ternilai buat kamu. Kami akan membahas isu-isu nyata, membedah tantangan, dan memberikan solusi yang bisa langsung kamu terapkan.</p>
+  <p>Jadi, siapkan kopi terbaik kamu, pasang headphone, dan mari kita ngoprek bareng di <strong>KOPOD</strong>! Jangan sampai ketinggalan setiap episode dan jadilah bagian dari komunitas developer yang terus berkembang.</p>
+  <div style={{ marginTop: '1em' }}>
+    <a href="https://open.spotify.com/show/68Qxbxj9lmsyxOI6vlG2m8?si=8oW_7VLdSfS8UoCmBvtfkA" target="_blank" rel="noopener noreferrer" style={{ color: '#1DB954', fontWeight: 'bold', textDecoration: 'underline', fontSize: '1.1em' }}>
+      Dengarkan KOPOD di Spotify
     </a>
-  </p>
-            </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
       </Draggable>
     </>
-  )
-}          
+  );
+}
 
 
 export default Patch
