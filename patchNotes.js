@@ -15,10 +15,11 @@ const patchNotes = [
     ]
   },
   {
-    head: "**Patch App**",
-    date: "2025-06-21",
+    head: "**Kopod Podcast**",
+    date: "2025-06-29",
     notes: [
-      "Patch App officially added to system."
+      "Podcast tentang teknologi, cerita kreator, dan diskusi santai seputar dunia digital.",
+      "Dengarkan episode terbaru di Spotify!"
     ]
   },
   {

@@ -1,14 +1,5 @@
 [
     {
-        "name": "About",
-        "pic": "About",
-        "folderId": "Desktop",
-        "size": 4,
-        "type": ".exe",
-        "x": 1,
-        "y": 1
-    },
-    {
         "name": "MyComputer",
         "pic": "MyComputer",
         "folderId": "Desktop",
@@ -207,9 +198,9 @@
         "y": 34
     },
     {
-        "name": "Patch",
-        "pic": "Patch",
-        "folderId": "Utility",
+        "name": "About",
+        "pic": "About",
+        "folderId": "Desktop",
         "size": 500,
         "type": ".exe",
         "x": 35,

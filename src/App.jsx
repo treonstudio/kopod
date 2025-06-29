@@ -196,10 +196,10 @@ function App() {
 
   useEffect(() => { // force user to update version by clearing their local storage!
     setTimeout(() => {
-      handleShow('Patch');
+      handleShow('About');
     }, 2500);
     
-    const resetIcon = desktopIcon.find(icon => icon.name === 'Patch')
+    const resetIcon = desktopIcon.find(icon => icon.name === 'About')
     if(!resetIcon) {
       localStorage.clear();
       location.reload();
@@ -749,10 +749,8 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
         />
         <Patch/>
         <RightClickWindows/>
-        <Notification/>
         <Shutdown/>
         <MyComputer/>
-        <MyBioFolder/>
         <ResumeFolder/>
         <ProjectFolder/>
         <MailFolder/>
@@ -936,7 +934,6 @@ function handleDrop(e, name, target, oldFolderID) {
 
 function ObjectState() { // Add all the state realted to folder here !! very important
   return [
-          { name: 'About', setter: setMybioExpand, usestate: MybioExpand},
           { name: 'Project', setter: setProjectExpand, usestate: ProjectExpand },
           { name: 'Mail', setter: setMailExpand, usestate: MailExpand },
           { name: 'Note', setter: setNoteExpand, usestate: NoteExpand },
@@ -950,7 +947,7 @@ function ObjectState() { // Add all the state realted to folder here !! very imp
           { name: 'RecycleBin', setter: setBinExpand, usestate: BinExpand },
           { name: 'Paint', setter: setPaintExpand, usestate: PaintExpand },
           { name: 'Utility', setter: setUtilityExpand, usestate: UtilityExpand },
-          { name: 'Patch', setter: setPatchExpand, usestate: PatchExpand },
+          { name: 'About', setter: setPatchExpand, usestate: PatchExpand },
 
         ];
 }

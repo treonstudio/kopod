@@ -4,11 +4,9 @@ import { motion, AnimatePresence  } from 'framer-motion';
 import startIcon from '../assets/95icon.png';
 import run from '../assets/run.png';
 import github from '../assets/github.png';
-import linked from '../assets/linkedin.png';
+import spotify from '../assets/spotify.png';
 import sidebar from '../assets/sidebar95.png';
 import display from '../assets/display.png';
-import project from '../assets/regFolder.png';
-import resume from '../assets/folder.png';
 import shutdownicon from '../assets/shutdownicon.png';
 import settings from '../assets/setting.png';
 import { BsCheck  } from "react-icons/bs";
@@ -26,8 +24,6 @@ export default function Footer() {
     const iconSizeRef = useRef(null);
     const calenderRef = useRef(null);
     const startPopUpRef = useRef(null)
-    const projectRef = useRef(null)
-    const resumeRef = useRef(null)
     const [calValue, calOnChange] = useState(new Date());
    
 
@@ -56,36 +52,6 @@ export default function Footer() {
 
      const footerItems = [
         {
-            className: "project",
-            imgSrc: project,
-            imgAlt: "project",
-            spanText: "Project",
-            arrow: true,
-            onClick: () => {
-                setProjectStartBar(!projectStartBar)
-                setResumejectStartBar(false)
-            },
-            onmouseenter: () => {
-                setProjectStartBar(true)
-                setResumejectStartBar(false)
-            },
-        },
-        {
-            className: "resume",
-            imgSrc: resume,
-            imgAlt: "resume",
-            spanText: "Resume",
-            arrow: true,
-            onClick: () => {
-                setResumejectStartBar(!resumeStartBar)
-                setProjectStartBar(false)
-            },
-            onmouseenter: () => {
-                setResumejectStartBar(true);
-                setProjectStartBar(false);
-            },
-        },
-        {
             className: "sidebar_popup",
             imgSrc: sidebar,
             imgAlt: "sidebar",
@@ -111,21 +77,14 @@ export default function Footer() {
         },
         {
             className: "linked",
-            imgSrc: linked,
-            imgAlt: "linked",
+            imgSrc: spotify,
+            imgAlt: "spotify",
             style: { borderRadius: '5px' },
-            spanText: "Linked",
-            onmouseenter: () => {
-                setResumejectStartBar(false);
-                setProjectStartBar(false);
+            spanText: "Spotify",
+            onClick: () => {
+                handleDoubleClickEnterLink('Spotify', handleShow)
+                setStartActive(false)
             },
-        },
-        {
-            className: "shutdownicon",
-            imgSrc: settings,
-            imgAlt: "shutdownicon",
-            spanText: "Settings",
-            onClick: () => handleShow('Settings'),
             onmouseenter: () => {
                 setResumejectStartBar(false);
                 setProjectStartBar(false);
@@ -147,20 +106,6 @@ export default function Footer() {
         },
         {
             className: "groove" 
-        },
-        {
-            className: "shutdownicon",
-            imgSrc: shutdownicon,
-            imgAlt: "shutdownicon",
-            spanText: "Shut down...",
-            onClick: () => {
-                setShutdownWindow(true)
-                setStartActive(false)
-            },
-            onmouseenter: () => {
-                setResumejectStartBar(false);
-                setProjectStartBar(false);
-            },
         }
     ];
     

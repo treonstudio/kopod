@@ -67,10 +67,6 @@ export function StyleHide(index, tap, ObjectState) {
 export function imageMapping (name) { 
   switch(name) {
 
-    case 'About':
-    case 'about':
-      return About;
-
     case 'MyComputer':
     case 'My Computer':
       return MyComputer;
@@ -145,8 +141,8 @@ export function imageMapping (name) {
     case "cat":
       return cat;
 
-    case "patch":
-    case "Patch":
+    case "about":
+    case "about":
       return patch;
 
 
@@ -314,7 +310,9 @@ export function handleDoubleClickEnterLink(name, handleshow) {
     case 'Github': 
       handleshow('Github'); 
       break;
-
+    case 'Spotify': 
+      handleshow('Spotify'); 
+      break;
     default: break; 
   }
 }
@@ -328,6 +326,7 @@ if (now - lastTapTime < 300) {
     case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
     case 'Type': window.open('https://yuteoctober.github.io/typingGame/', '_blank'); break;
     case 'Github': window.open('https://github.com/Yuteoctober/wins95Portfolio/', '_blank'); break;
+    case 'Spotify': window.open('https://open.spotify.com/show/68Qxbxj9lmsyxOI6vlG2m8', '_blank'); break;
     default: break; 
   }
 }
