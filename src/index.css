@@ -254,7 +254,7 @@ body {
     display: flex;
     position: relative;
     height: 28px;
-    width: 66px;
+    width: 80px;
     align-items: center;
     justify-content: center;
     gap: 0px;
@@ -283,7 +283,7 @@ body {
 
 .footer .btn_start img {
     position: relative;
-    width: 22px;
+    width: 16px;
     right: 1px;
 }
 
