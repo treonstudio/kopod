@@ -32,6 +32,9 @@ const WebampPlayer = () => {
                         url: mp3,
                         duration: 213
                     }],
+                    initialSkin: {
+                        url: '/src/assets/skin.wsz',
+                      },
                     zIndex: 999
                 };
                 const webamp = new Webamp(options);
