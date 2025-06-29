@@ -21,7 +21,6 @@ import WindowsShutdown from './components/WindowsShutdown';
 import BgSetting from './components/BgSetting';
 import Run from './components/Run';
 import Notification from './components/Notification';
-import BTC from './components/BTC';
 import EmptyFolder from './components/EmptyFolder';
 import ErrorBtn from './components/ErrorBtn';
 import RightClickWindows from './components/RightClickWindows';
@@ -69,7 +68,6 @@ function App() {
   const [selectedFolder, setSelectedFolder] = useState({label: 'MyComputer', img: imageMapping('MyComputer')})
   const [currentFolder, setCurrentFolder] = useState('MyComputer')
   const [loading, setLoading] = useState(true)
-  const [btcShow, setBtcShow] = useState(false)
   const [resumeStartBar, setResumejectStartBar] = useState(false)
   const [projectStartBar, setProjectStartBar] = useState(false)
   const [calenderToggle, setCalenderToggle] = useState(false)
@@ -738,7 +736,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     selectedFolder, setSelectedFolder,
     currentFolder, setCurrentFolder,
     MyComputerExpand, setMyComputerExpand,
-    btcShow, setBtcShow,
     projectStartBar, setProjectStartBar,
     resumeStartBar, setResumejectStartBar,
     calenderToggle, setCalenderToggle,
@@ -937,7 +934,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
         <OpenProject/>
         <BgSetting/>
         <Run/>
-        {btcShow && <BTC/>}
         <Dragdrop/>
         <Footer/>
       </UserContext.Provider>
@@ -1184,11 +1180,6 @@ function handleShow(name) {
 
   if(name === '' || !name) return;
 
-  if(name === 'Bitcoin') {
-    setBtcShow(true)
-    return;
-  }
-
   const lowerCaseName = name.toLowerCase().split(' ').join('');
 
   const allSetItems = ObjectState() // call all usestate object
@@ -1256,12 +1247,6 @@ function handleShowMobile(name) {
   if (now - lastTapTime < 300) {
 
     if(name === '' || !name) return;
-
-  
-    if(name === 'Bitcoin') {
-      setBtcShow(true)
-      return;
-    }
   
     const lowerCaseName = name.toLowerCase().split(' ').join('');
   
