@@ -63,7 +63,7 @@ function App() {
   const [undo, setUndo] = useState(['MyComputer'])
   const [selectedFolder, setSelectedFolder] = useState({label: 'MyComputer', img: imageMapping('MyComputer')})
   const [currentFolder, setCurrentFolder] = useState('MyComputer')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [resumeStartBar, setResumejectStartBar] = useState(false)
   const [projectStartBar, setProjectStartBar] = useState(false)
   const [calenderToggle, setCalenderToggle] = useState(false)
@@ -92,7 +92,6 @@ function App() {
   const [reMountRun, setReMountRun] = useState(0)
   const [ErrorPopup, setErrorPopup] = useState(false)
   const [themeDragBar, setThemeDragBar] = useState(() => localStorage.getItem('barcolor') || '#14045c')
-  const [login, setLogin] = useState(true)
   const [windowsShutDownAnimation, setWindowsShutDownAnimation] = useState(false)
   const [detectMouse, setDetectMouse] = useState(false)
   const endOfMessagesRef = useRef(null);
@@ -332,87 +331,11 @@ useEffect(() => {
 
 
 
-  useEffect(() => {
-    let retryCount = 0;
-    const maxRetries = 10;
 
-    const connectWebSocket = () => {
-    socket.current = new WebSocket('wss://notebackend-wrqt.onrender.com');
-
-    socket.current.onopen = () => {
-      retryCount = 0; 
-      setLoading(false)
-    };
-
-    socket.current.onmessage = (event) => {
-      const data = JSON.parse(event.data)
-
-      if (data.count !== undefined) {
-        setOnlineUser(data.count);
-    }
-      
-      if (data.key) {
-        setKeyChatSession(data.key)
-      } else if (data.name && data.chat) {
-        setChatData(prevData => [...prevData, data])
-        setLoadedMessages(prevMessages => [...prevMessages, data])
-        setAllowNoti(true)
-
-        // Scroll to the end of messages after updating chat data
-        setTimeout(() => {
-          endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" })
-        }, 100)
-      }
-    }
-
-    socket.current.onerror = (error) => {
-      console.error('WebSocket error:', error)
-      setLoading(false)
-    }
-    socket.current.onclose = () => {
-      if (retryCount < maxRetries) {
-        retryCount++;
-        getChat()
-        setTimeout(connectWebSocket, 1000); // Reconnect after 1 second
-      
-      } else {
-        console.log('Max retries reached. WebSocket closed permanently.');
-      }
-    };
-  };
-
-  connectWebSocket();
-
-  return () => {
-    if (socket.current) {
-      socket.current.close();
-    }
-  };
-}, []);
-
-  useEffect(() => { // noti
-    if(allowNoti){
-
-      if (chatData.length) {
-        endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-      }
-
-      if(!MSNExpand.show || MSNExpand.hide) {
-        setNotiOn(false);
-        setTimeout(() => {
-            clearTimeout(clearNotiTimeOut)
-            setNotiOn(true);
-            setNewMessage('msn');  // Notification message
-        }, 100);
-      }
-    }
-      
-  },[chatData])
 
 
 useEffect(() => { // touch support device === true
   iconFocusIcon('') // make icon focus goes false
-  getChat()
 
   const htmlElement = document.documentElement; //check if user is in frontend
   htmlElement.addEventListener('mouseenter', handleMouseSeen);
@@ -765,7 +688,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     userNameValue, setUserNameValue,
     endOfMessagesRef,
     sendDisable, setSendDisable,
-    login, setLogin,
     openProjectExpand, setOpenProjectExpand,
     projectUrl, setProjectUrl,
     projectname,
@@ -778,47 +700,11 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     remountRunPosition,
   }
 
-
-  // show login page
-  if(login) {
-    if(!login) {
-      setLoading(true)
-    }
-    return(
-      <UserContext.Provider value={contextValue}>
-        <Login/>
-      </UserContext.Provider>
-    )
-  }
-
   if(windowsShutDownAnimation) {
     return(
       <UserContext.Provider value={contextValue}>
         <WindowsShutdown/>
       </UserContext.Provider>
-    )
-  }
-
-  if(loading && !login) {
-    const localThemeBg = localStorage.getItem('theme') || '#098684'; 
-
-    return(
-      <div 
-      style={{
-        width: '100%',
-        height: '100svh',
-        background: localThemeBg
-      }}>
-        <img src={loadingSpin} alt="loading" 
-          style={{
-            width: '30px',
-            position: 'absolute',
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      </div>
     )
   }
 
@@ -1052,27 +938,6 @@ function handleDrop(e, name, target, oldFolderID) {
 
 
 
-// Function to fetch chat data
-async function getChat() {
-  try {
-    const response = await axios.get(`https://notebackend-wrqt.onrender.com/chat/getchat/`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
-    setChatDown(false)
-    setChatData(response.data.chat);
-    setLoadedMessages(response.data.chat.slice(-40))
-    // if(MSNExpand.show){
-    //   endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-    // }
-    // setKeyChatSession(response.data.key)
-  } catch (error) {
-    setChatDown(true)
-    console.error('Error fetching Chat:', error);
-  }
-}
 
 function ObjectState() { // Add all the state realted to folder here !! very important
   return [
