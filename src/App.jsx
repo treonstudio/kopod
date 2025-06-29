@@ -13,7 +13,6 @@ import WebampPlayer from './components/WinampPlayer';
 import ResumeFile from './components/ResumeFile';
 import Shutdown from './components/Shutdown';
 import iconInfo from './icon.json'
-import Login from './components/Login';
 import OpenProject from './components/OpenProject';
 import WindowsShutdown from './components/WindowsShutdown';
 import BgSetting from './components/BgSetting';
@@ -22,8 +21,6 @@ import Notification from './components/Notification';
 import EmptyFolder from './components/EmptyFolder';
 import ErrorBtn from './components/ErrorBtn';
 import RightClickWindows from './components/RightClickWindows';
-import axios from 'axios';
-import loadingSpin from './assets/loading.gif'
 import Patch from './components/Patch';
 import { StyleHide, imageMapping,
   handleDoubleClickEnterLink,handleDoubleTapEnterMobile,
