@@ -12,7 +12,6 @@ import MailFolder from './components/MailFolder';
 import WebampPlayer from './components/WinampPlayer';
 import ResumeFile from './components/ResumeFile';
 import Shutdown from './components/Shutdown';
-import MineSweeper from './components/MineSweeper'
 import iconInfo from './icon.json'
 import Login from './components/Login';
 import OpenProject from './components/OpenProject';
@@ -163,11 +162,6 @@ function App() {
     return parsedItems; // This ensures the parsed items or iconInfo is returned correctly
 });
 
-  const [MineSweeperExpand, setMineSweeperExpand] = useState(
-  {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
-
-  const [MSNExpand, setMSNExpand] = useState(
-    {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
 
   const [BgSettingExpand, setBgSettingExpand] = useState(
     {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
@@ -765,8 +759,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     iconFocusIcon,
     deleteTap,
     shutdownWindow, setShutdownWindow,
-    MineSweeperExpand, setMineSweeperExpand,
-    MSNExpand, setMSNExpand,
     chatData, setChatData,
     chatValue, setChatValue,
     createChat,
@@ -887,7 +879,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
         <MailFolder/>
         <ResumeFile/>
         <WebampPlayer/>
-        <MineSweeper/>
         <OpenProject/>
         <BgSetting/>
         <Run/>
@@ -1086,16 +1077,10 @@ async function getChat() {
 function ObjectState() { // Add all the state realted to folder here !! very important
   return [
           { name: 'About', setter: setMybioExpand, usestate: MybioExpand},
-          { name: 'Resume', setter: setResumeExpand, usestate: ResumeExpand },
           { name: 'Project', setter: setProjectExpand, usestate: ProjectExpand },
           { name: 'Mail', setter: setMailExpand, usestate: MailExpand },
-          { name: 'Nft', setter: setNftExpand, usestate: NftExpand},
           { name: 'Note', setter: setNoteExpand, usestate: NoteExpand },
-          { name: 'AiAgent', setter: setOpenProjectExpand, usestate: openProjectExpand },
           { name: 'Winamp', setter: setWinampExpand, usestate: WinampExpand },
-          { name: 'ResumeFile', setter: setResumeFileExpand, usestate: ResumeFileExpand },
-          { name: 'MineSweeper', setter: setMineSweeperExpand, usestate: MineSweeperExpand },
-          { name: 'MSN', setter: setMSNExpand, usestate: MSNExpand },
           { name: 'Internet', setter: setOpenProjectExpand, usestate: openProjectExpand },
           { name: 'Settings', setter: setBgSettingExpand, usestate: BgSettingExpand },
           { name: 'Run', setter: setRunExpand, usestate: RunExpand },

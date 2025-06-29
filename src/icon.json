@@ -18,24 +18,6 @@
         "y": 1.5
     },
     {
-        "name": "Project",
-        "pic": "Project",
-        "folderId": "Desktop",
-        "size": 2000,
-        "type": "folder",
-        "x": 3,
-        "y": 3
-    },
-    {
-        "name": "Mail",
-        "pic": "Mail",
-        "folderId": "Desktop",
-        "size": 12,
-        "type": ".exe",
-        "x": 4,
-        "y": 4
-    },
-    {
         "name": "Winamp",
         "pic": "Winamp",
         "folderId": "Utility",
@@ -187,15 +169,6 @@
         "type": ".jpeg",
         "x": 26,
         "y": 26
-    },
-    {
-        "name": "WebResume",
-        "pic": "WebResume",
-        "folderId": "Resume",
-        "size": 2100,
-        "type": ".exe",
-        "x": 28,
-        "y": 28
     },
     {
         "name": "RecycleBin",
