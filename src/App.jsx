@@ -13,7 +13,6 @@ import WebampPlayer from './components/WinampPlayer';
 import ResumeFile from './components/ResumeFile';
 import Shutdown from './components/Shutdown';
 import MineSweeper from './components/MineSweeper'
-import MsnFolder from './components/MsnFolder';
 import iconInfo from './icon.json'
 import Login from './components/Login';
 import OpenProject from './components/OpenProject';
@@ -26,8 +25,6 @@ import ErrorBtn from './components/ErrorBtn';
 import RightClickWindows from './components/RightClickWindows';
 import axios from 'axios';
 import loadingSpin from './assets/loading.gif'
-import NewsApp from './components/NewsApp'
-import SpinningCat from './components/SpinningCat';
 import Patch from './components/Patch';
 import { StyleHide, imageMapping,
   handleDoubleClickEnterLink,handleDoubleTapEnterMobile,
@@ -917,8 +914,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
           photoMode={true}
         />
         <Patch/>
-        <SpinningCat/>
-        <NewsApp/>
         <RightClickWindows/>
         <Notification/>
         <Shutdown/>
@@ -930,7 +925,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
         <ResumeFile/>
         <WebampPlayer/>
         <MineSweeper/>
-        <MsnFolder/>
         <OpenProject/>
         <BgSetting/>
         <Run/>
@@ -1279,11 +1273,6 @@ function handleShowMobile(name) {
         }, 100);
         if(lowerCaseName === 'mail') clippySendemailfunction();
         if(lowerCaseName === 'winamp') clippySongFunction();
-        if(lowerCaseName === 'msn') clippyUsernameFunction();
-        if(lowerCaseName === 'nft') {
-          handleDoubleClickiframe('Nft', setOpenProjectExpand, setProjectUrl)
-          handleShow('Internet');
-        }
         if(lowerCaseName === 'note') {
           handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl)
           handleShow('Internet');
