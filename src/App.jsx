@@ -105,22 +105,6 @@ function App() {
   const [chatValue, setChatValue] = useState('')
   const [chatData, setChatData] = useState([])
   const [shutdownWindow, setShutdownWindow] = useState(false)
-  const ClearTOdonttouch = useRef(null);
-  const ClearTOSongfunction = useRef(null);
-  const ClearTOclippySendemailfunction = useRef(null);
-  const ClearTOclippyThanksYouFunction = useRef(null);
-  const ClearTOclippyUsernameFunction = useRef(null);
-  const firstTimoutShowclippy = useRef(null);
-  const RandomTimeoutShowClippy = useRef(null);
-  const SecondRandomTimeoutShowClippy = useRef(null);
-  const [clippyUsername, setClippyUsername] = useState(false)
-  const [clippySong, setClippySong] = useState(false)
-  const [clippySendemail, setClippySendemail] = useState(false)
-  const [clippyThanks, setClippyThanks] = useState(false)
-  const [clippyTouched, setClippyTouched] = useState(false)
-  const [randomClippyPopup, setRandomClippyPopup] = useState(false)
-  const [clippyIndex, setClippyIndex] = useState(0)
-  const [showClippy, setShowClippy] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [startActive, setStartActive] = useState(false);
   const [time, setTime] = useState('');
@@ -221,9 +205,6 @@ function App() {
       return projectlinkletter[0].toUpperCase() + projectlinkletter.slice(1);
   }
 
-  // Define all state setter functions and corresponding clear functions in an array
-  const allSetters = [setClippyThanks, setClippySendemail, setClippySong, setClippyUsername];
-  const allClears = [ClearTOclippyThanksYouFunction, ClearTOclippySendemailfunction, ClearTOSongfunction, ClearTOclippyUsernameFunction];
 
   useEffect(() => { // force user to update version by clearing their local storage!
     setTimeout(() => {
@@ -775,24 +756,8 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     handleDoubleClickiframe,
     handleDoubleTapiframeMobile,
     WinampExpand, setWinampExpand,
-    showClippy, setShowClippy,
-    clippyIndex, setClippyIndex,
-    randomClippyPopup, setRandomClippyPopup,
-    clippyTouched, setClippyTouched,
-    clippyThanks, setClippyThanks,
-    clippySendemail, setClippySendemail,
-    clippyThanksYouFunction,
-    clippySendemailfunction,
-    RandomTimeoutShowClippy,
-    firstTimoutShowclippy,
-    SecondRandomTimeoutShowClippy,
-    ClearTOclippySendemailfunction,
-    ClearTOclippyThanksYouFunction,
+
     ResumeFileExpand, setResumeFileExpand,
-    clippySong, setClippySong,
-    clippySongFunction,
-    ClearTOSongfunction,
-    ClearTOdonttouch,
     ObjectState,
     handleSetFocusItemTrue,
     inlineStyleExpand,
@@ -807,8 +772,6 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
     createChat,
     userNameValue, setUserNameValue,
     endOfMessagesRef,
-    clippyUsername, setClippyUsername,
-    ClearTOclippyUsernameFunction,
     sendDisable, setSendDisable,
     login, setLogin,
     openProjectExpand, setOpenProjectExpand,
@@ -1203,21 +1166,6 @@ function handleShow(name) {
         item.setter(prev => ({...prev, show: true, focusItem: true, hide: false, zIndex: maxZindexRef.current + 1 }));
             maxZindexRef.current = item.usestate.zIndex; // Update max zIndex reference
       }, 100);
-      if(lowerCaseName === 'mail') clippySendemailfunction();
-      if(lowerCaseName === 'winamp') clippySongFunction();
-      if(lowerCaseName === 'msn') clippyUsernameFunction();
-      if(lowerCaseName === 'nft') {
-        handleDoubleClickiframe('Nft', setOpenProjectExpand, setProjectUrl)
-        handleShow('Internet');
-      }
-      if(lowerCaseName === 'note') {
-        handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl)
-        handleShow('Internet');
-      }
-      if(lowerCaseName === 'aiagent') {
-        handleDoubleClickiframe('AiAgent', setOpenProjectExpand, setProjectUrl)
-        handleShow('Internet');
-      }
     }
     item.setter(prev => ({...prev,focusItem: false}));
 
@@ -1271,16 +1219,6 @@ function handleShowMobile(name) {
           item.setter(prev => ({...prev, show: true, focusItem: true, hide: false, zIndex: maxZindexRef.current + 1 }));
             maxZindexRef.current = item.usestate.zIndex; // Update max zIndex reference
         }, 100);
-        if(lowerCaseName === 'mail') clippySendemailfunction();
-        if(lowerCaseName === 'winamp') clippySongFunction();
-        if(lowerCaseName === 'note') {
-          handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl)
-          handleShow('Internet');
-        }
-        if(lowerCaseName === 'aiagent') {
-          handleDoubleClickiframe('AiAgent', setOpenProjectExpand, setProjectUrl)
-          handleShow('Internet');
-        }
       }
       item.setter(prev => ({...prev,focusItem: false}));
   
@@ -1297,46 +1235,6 @@ function handleShowMobile(name) {
   setLastTapTime(now)
 }
 
-
-  function handleClippyFunction(setterFunction, clearFunction, allSetters) {
-    // Clear all existing timeouts
-    allSetters.forEach((setter, index) => {
-      if (setter !== setterFunction) {
-        setter(false);
-        clearTimeout(allClears[index].current);
-      }
-    });
-    setterFunction(true);
-    setShowClippy(true);
-
-    clearTimeout(clearFunction.current);
-    if (RandomTimeoutShowClippy.current) clearTimeout(RandomTimeoutShowClippy.current);
-    if (firstTimoutShowclippy.current) clearTimeout(firstTimoutShowclippy.current);
-    if (SecondRandomTimeoutShowClippy.current) clearTimeout(SecondRandomTimeoutShowClippy.current);
-
-    clearFunction.current = setTimeout(() => {
-      setterFunction(false);
-      setShowClippy(false);
-      setRandomClippyPopup(prev => !prev);
-    }, 8000);
-  }
-
-
-  function clippyThanksYouFunction() {
-    handleClippyFunction(setClippyThanks, ClearTOclippyThanksYouFunction, allSetters);
-  }
-
-  function clippySendemailfunction() {
-    handleClippyFunction(setClippySendemail, ClearTOclippySendemailfunction, allSetters);
-  }
-
-  function clippySongFunction() {
-    handleClippyFunction(setClippySong, ClearTOSongfunction, allSetters);
-  }
-
-  function clippyUsernameFunction() {
-    handleClippyFunction(setClippyUsername, ClearTOclippyUsernameFunction, allSetters);
-  }
 
   function handleSetFocusItemTrue(name) {
     const LowerCaseName = name.toLowerCase().split(' ').join('');

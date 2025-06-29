@@ -18,7 +18,6 @@ function MailFolder() {
     lastTapTime, setLastTapTime,
     StyleHide,
     isTouchDevice,
-    clippyThanksYouFunction,
     handleSetFocusItemTrue,
     inlineStyleExpand,
     inlineStyle,
@@ -39,7 +38,6 @@ const form = useRef();
       })
       .then(
         () => {
-          clippyThanksYouFunction()
           alert('Thank you for your interest, will contact you back shortly!')
           form.current.reset();
         },

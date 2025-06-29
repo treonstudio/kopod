@@ -193,14 +193,6 @@ const patchNotes = [
     ]
   },
   {
-    head: "**Clippy Assistant**",
-    date: "2024-09-26",
-    notes: [
-      "Clippy assistant introduced with motivational speeches.",
-      "Clippy now gives context-aware advice when interacting with components."
-    ]
-  },
-  {
     head: "**UI Framework**",
     date: "2024-08-25",
     notes: [

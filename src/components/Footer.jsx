@@ -11,7 +11,6 @@ import project from '../assets/regFolder.png';
 import resume from '../assets/folder.png';
 import shutdownicon from '../assets/shutdownicon.png';
 import settings from '../assets/setting.png';
-import { clippyPhrase, clippySuggest } from './function/ClippyFunction';
 import { BsCheck  } from "react-icons/bs";
 import Calendar from 'react-calendar';
 import { BsFillCaretRightFill } from "react-icons/bs";
@@ -51,25 +50,9 @@ export default function Footer() {
         handleShow,
         StyleHide,
         setWinampExpand,
-        showClippy, setShowClippy,
-        clippyIndex, setClippyIndex,
-        randomClippyPopup, setRandomClippyPopup,
-        clippyTouched, setClippyTouched,
-        clippyThanks,
-        clippySendemail, 
-        firstTimoutShowclippy,
-        RandomTimeoutShowClippy,
-        SecondRandomTimeoutShowClippy,
-        ClearTOclippySendemailfunction,
-        ClearTOclippyThanksYouFunction,
-        ClearTOSongfunction,
-        clippySong,
-        ClearTOdonttouch,
         handleDoubleClickEnterLink,
         ObjectState,
         setShutdownWindow,
-        ClearTOclippyUsernameFunction,
-        clippyUsername,
      } = useContext(UseContext);
 
      const footerItems = [
@@ -329,86 +312,6 @@ export default function Footer() {
       }
 
 
-    useEffect(() => { // display clippy when windows start
-        clearTimeout(firstTimoutShowclippy.current)
-        clearTimeout(ClearTOclippySendemailfunction.current)
-        clearTimeout(ClearTOclippyThanksYouFunction.curremt)
-        clearTimeout(ClearTOSongfunction.current)
-        clearTimeout(ClearTOclippyUsernameFunction.current)
-
-        setShowClippy(true)
-        firstTimoutShowclippy.current = setTimeout(() => {
-            setShowClippy(false) 
-        }, 10000);
-        
-        return () => {
-            clearTimeout(firstTimoutShowclippy.current);
-        };
-    },[])
-
-
-    useEffect(() => { //random clippy time
-        clearTimeout(SecondRandomTimeoutShowClippy.current)
-        const randomTime = Math.floor(Math.random() * (50000 - 30000 + 1)) + 30000;
-
-        clearTimeout(ClearTOclippySendemailfunction.current)
-        clearTimeout(ClearTOclippyThanksYouFunction.curremt)
-        clearTimeout(ClearTOSongfunction.current)
-        
-        RandomTimeoutShowClippy.current = setTimeout(() => { // random clippy index from length
-        const randomIndex = Math.floor(Math.random() * clippyPhrase.inspiration.length)
-                setClippyIndex(randomIndex);
-                setShowClippy(true);
-        SecondRandomTimeoutShowClippy.current = setTimeout(() => {
-                setShowClippy(false);
-                setRandomClippyPopup(prev => !prev);
-            }, 10000); 
-        }, randomTime); 
-    
-        return () => {
-            clearTimeout(RandomTimeoutShowClippy.current);
-            clearTimeout(SecondRandomTimeoutShowClippy.current);
-        };
-    }, [randomClippyPopup]);
-
-
-    function dontTouch() { // click on clippy while speaking, will active angry clippy
-        clearTimeout(ClearTOdonttouch.current)
-        ClearTOdonttouch.current = setClippyTouched(true)
-        setTimeout(() => {
-            setClippyTouched(false)   
-        }, 3500);
-
-        return () => {
-            clearTimeout(ClearTOdonttouch.current)
-        }
-    }
-
-    function handleClipperTalk() {
-        if(clippyThanks) return clippySuggest[1];
-        if(clippyTouched) return clippyPhrase.interruption[0].phrase;
-        if(clippySendemail) return clippySuggest[0]
-        if(clippySong) return clippySuggest[2]
-        if(clippyUsername) return !chatDown? clippySuggest[3] : clippySuggest[4]
-        
-        return clippyPhrase.inspiration[clippyIndex].phrase // return default from phrase 
-    }
-    
-    useEffect(() => { /// need useeffect to update state before it returns on handleClipperTalk()
-        if (clippySendemail) {
-            setClippyIndex(1);
-            return;
-        }
-        if (clippySong) {
-            setClippyIndex(7); 
-            return;
-        }
-        if (clippyUsername) {
-            setClippyIndex(2); 
-            return;
-        }
-    }, [clippySendemail, clippySong, clippyUsername]);
-
     const iconSizeSelection = [
         { label: '360x640', value: 1 },
         { label: '640x720', value: 2 },
@@ -560,29 +463,6 @@ export default function Footer() {
                         
                     </div>
                     )}
-                    
-                <AnimatePresence>
-                {showClippy && (
-                    <motion.div
-                        className="clippy_container"
-                        onClick={dontTouch}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ rotate: '360deg', opacity: 1, scale: 1 }}
-                        transition={{ ease: 'easeInOut', duration: 0.8, delay: 0.5 }}
-                        exit={{ rotate: '-360deg', scale: 0, opacity: 0, transition: { ease: 'easeInOut', duration: 0.8 } }}
-                    >
-                    <img src={ clippyTouched? clippyPhrase.interruption[0].animation : clippyPhrase.inspiration[clippyIndex].animation} alt="clippy" />
-                        <motion.div className="bubble_chat"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{ ease: "easeIn", duration: .8, delay: 1.5 }}
-                            exit={{ opacity: 0, transition: { ease: 'easeOut', duration: 0.1 } }}
-                        >
-                    <p>{handleClipperTalk()}</p>
-                    </motion.div>
-                </motion.div>
-                )}
-                </AnimatePresence>
             </div>
             {iconSize && (
               <div className="icon_size_container"
