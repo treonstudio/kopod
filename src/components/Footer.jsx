@@ -32,7 +32,6 @@ export default function Footer() {
    
 
     const { 
-        newsPopup, setNewsPopup,
         isTouchDevice,
         desktopIcon,
         projectStartBar, setProjectStartBar,
@@ -376,7 +375,7 @@ export default function Footer() {
                             }} 
                             onClick={(e) => {
                                 e.stopPropagation()
-                                setNewsPopup(!newsPopup)
+
                             }}
                     />
                     <img src={display} alt="display" 

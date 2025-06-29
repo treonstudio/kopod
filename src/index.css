@@ -4,7 +4,14 @@
     src: url('../src/assets/win95.ttf') format('truetype');
 }
 
+html, body {
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAiF/f+P9kO1s2tB2g2t1nQfBC5s35sJb4zFYn4Tz5fG4fUASkSgEBAAAYgBwYd/ADjAF3zMCIIEaOAEyAwwA2YAPkC/gH5A9AEYAmcAU2AGzAM2gL5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+Q') 0 0, auto;
+}
+
+
+
 #root {
+    background: #226359;
     position: absolute;
     width: 100%;
     height: 100svh;
@@ -13,7 +20,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAiF/f+P9kO1s2tB2g2t1nQfBC5s35sJb4zFYn4Tz5fG4fUASkSgEBAAAYgBwYd/ADjAF3zMCIIEaOAEyAwwA2YAPkC/gH5A9AEYAmcAU2AGzAM2gL5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+QNoBRAA7YAmYAL2ACzAK2gL6AvgB9QNYA7YAvYALsA6MAP+BeAE2gH5APoB+Q') 0 0, auto;
 }
+
+
 #root::before {
     content: "";
     position: absolute;
@@ -661,7 +671,11 @@ body {
     padding: 3px 6px;
 }
 
-.react-calendar__navigation button:active {
+.react-calendar__navigation button, a, [role="button"], input[type="submit"] {
+  cursor: pointer;
+}
+
+button:active {
     border: 1px solid white;
     border-top-color: black;
     border-left-color: black;
@@ -843,3 +857,91 @@ body {
     z-index: 5;
     left: 13.5rem;
 }
+
+.kopodLogo {
+    height: 180px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}    
+
+
+.crt {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 999999; 
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    }
+
+    @keyframes flicker {
+        0% {
+        opacity: 0.27861;
+        }
+        5% {
+        opacity: 0.34769;
+        }
+        10% {
+        opacity: 0.23604;
+        }
+        15% {
+        opacity: 0.90626;
+        }
+        20% {
+        opacity: 0.18128;
+        }
+        25% {
+        opacity: 0.83891;
+        }
+        30% {
+        opacity: 0.65583;
+        }
+        35% {
+        opacity: 0.67807;
+        }
+        40% {
+        opacity: 0.26559;
+        }
+        45% {
+        opacity: 0.84693;
+        }
+        50% {
+        opacity: 0.96019;
+        }
+        55% {
+        opacity: 0.08594;
+        }
+        60% {
+        opacity: 0.20313;
+        }
+        65% {
+        opacity: 0.71988;
+        }
+        70% {
+        opacity: 0.53455;
+        }
+        75% {
+        opacity: 0.37288;
+        }
+        80% {
+        opacity: 0.71428;
+        }
+        85% {
+        opacity: 0.70419;
+        }
+        90% {
+        opacity: 0.7003;
+        }
+        95% {
+        opacity: 0.36108;
+        }
+        100% {
+        opacity: 0.24387;
+        }
+      }

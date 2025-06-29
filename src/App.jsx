@@ -29,13 +29,11 @@ import { StyleHide, imageMapping,
   handleDoubleClickPhotoOpen,
  } from './components/function/AppFunctions';
 
+import kopodLogo from './assets/kopod-art.png';
 
 function App() {
-  const [runCatVideo, setRunCatVideo] = useState(false)
-  const [newsPopup, setNewsPopup] = useState(false)
   const [onlineUser, setOnlineUser] = useState(0)
   const [sortedIcon, setSortedIcon] = useState([])
-  const [sortIconTrigger, setSortIconTrigger] = useState(0)
   const [deleteIcon, setDeleteIcon] = useState(0)
   const refBeingClicked = useRef(null)
   const maxZindexRef = useRef(2);
@@ -595,13 +593,10 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
 
   const contextValue = {
     PatchExpand, setPatchExpand,
-    runCatVideo, setRunCatVideo,
-    newsPopup, setNewsPopup,
     onlineUser,
     UtilityRef,
     PaintExpand, setPaintExpand,
     sortedIcon, setSortedIcon,
-    sortIconTrigger, setSortIconTrigger,
     maxZindexRef,
     deleteIcon, setDeleteIcon,
     handleMobileLongPressBin,
@@ -707,6 +702,7 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
 
   return (
     <>
+      <div className="crt" />
       <UserContext.Provider value={contextValue}>
       {regErrorPopUp && (
         <ErrorBtn
@@ -767,6 +763,8 @@ function handleShowInfolderMobile(name) { //important handleshow for in folder
         <Run/>
         <Dragdrop/>
         <Footer/>
+        <p>hello</p>
+        <img src={kopodLogo} alt="kopod-logo" className='kopodLogo' />
       </UserContext.Provider>
     </>
   )

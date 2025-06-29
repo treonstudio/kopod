@@ -10,7 +10,6 @@ function RightClickWindows() {
 
   const { 
     sortedIcon, setSortedIcon,
-    sortIconTrigger, setSortIconTrigger,
     deleteIcon, setDeleteIcon,
     setKey,
     refBeingClicked,
@@ -32,18 +31,7 @@ function RightClickWindows() {
   function refreshed() {
     setRightClickDefault(false);
     setRefresh(prev => prev + 1);
-    // setSortIconTrigger(prev => prev + 1)
   }
-
-
-  // useEffect(() =>{
-  //   if(sortIconTrigger > 0){
-  //     const updatedSortedIcon = sortedIcon.length > 1 ? sortedIcon : desktopIcon
-  //     setDesktopIcon(updatedSortedIcon)
-  //     setRefresh(prev => prev + 1);
-  //   }
-
-  // },[sortIconTrigger])
 
 
   function handleSwitchOpenFolder() { // decide which folder function to call
