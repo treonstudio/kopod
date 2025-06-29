@@ -48,39 +48,39 @@ function Patch() {
           y: window.innerWidth <= 500 ? 100 : 90,
         }}
         onStop={(event, data) => handleDragStop(event, data)}
-        onStart={() => handleSetFocusItemTrue('Patch')}
+        onStart={() => handleSetFocusItemTrue('About')}
       >
         <div
             className='folder_folder-resumefile'
             onClick={(e) => {
                 e.stopPropagation();
-                handleSetFocusItemTrue('Patch');
+                handleSetFocusItemTrue('About');
             }}
             style={{
                 height: window.innerHeight <= 700 ? '80%' : '',
                 width: '200px',
                 resize: 'none',
-                ...(PatchExpand.expand ? inlineStyleExpand('Patch') : inlineStyle('Patch'))
+                ...(PatchExpand.expand ? inlineStyleExpand('About') : inlineStyle('About'))
             }}
             >
           <div className="folder_dragbar-resumefile"
              style={{ background: PatchExpand.focusItem? themeDragBar : '#757579'}}
           >
             <div className="folder_barname-resumefile">
-                <img src={imageMapping('Patch')} alt="Patch" />
+                <img src={imageMapping('About')} alt="Patch" />
                 <span>About</span>
             </div>
             <div className="folder_barbtn-resumefile">
               <div onClick={ !isTouchDevice? (e) => {
                 e.stopPropagation()
                 setPatchExpand(prev => ({...prev, hide: true, focusItem: false}))
-                StyleHide('Patch') 
+                StyleHide('About') 
               } : undefined
             }
                    onTouchEnd={(e) => {
                     e.stopPropagation()
                     setPatchExpand(prev => ({...prev, hide: true, focusItem: false}))
-                    StyleHide('Patch')
+                    StyleHide('About')
                   }}
                   onTouchStart={(e) => e.stopPropagation()}
               >
@@ -101,11 +101,11 @@ function Patch() {
               <div>
                 <p className='x-resumefile'
                  onClick={!isTouchDevice ? () => {
-                  deleteTap('Patch')
+                  deleteTap('About')
                  }: undefined
                 }
                 onTouchEnd={() => {
-                  deleteTap('Patch')
+                  deleteTap('About')
               }}
                 >×</p>
               </div>
@@ -119,14 +119,22 @@ function Patch() {
                     <h1>About us.</h1> 
             </div>
             <div className="patch_log">
-                {patchNotes.map((note, index) => (
-                    <div key={index} style={{ marginBottom: '10px' }}>
-                    <p><strong>{note.head}</strong> — {note.date}</p>
-                    {note.notes.map((line, i) => (
-                        <p key={i}>- {line}</p>
-                    ))}
-                    </div>
-                ))}
+  <p>
+    <strong>KOPOD</strong> lahir dari pertanyaan simple: kenapa obrolan paling seru tentang dunia digital selalu terjadi di coffee shop atau co-working space, tapi gak pernah ke-record buat orang lain?<br/>
+    Sering banget ketemu sama talents yang punya cerita gila—coders yang belajar programming dari YouTube terus sekarang kerja remote buat perusahaan luar, designers yang portfolionya viral di socmed, data analysts yang insights-nya ngubah strategi bisnis besar. Tapi cerita mereka cuma beredar di circle sendiri.
+  </p>
+  <br/>
+  <br/>
+  <p>
+    <strong>Host:</strong> Ridho Pratama<br/>
+    <strong>Co-host:</strong> Yute October
+  </p>
+  <p>
+    Dengarkan episode terbaru di Spotify:<br/>
+    <a href="https://open.spotify.com/show/68Qxbxj9lmsyxOI6vlG2m8" target="_blank" rel="noopener noreferrer" style={{ color: '#1DB954', fontWeight: 'bold', textDecoration: 'underline' }}>
+      KOPOD Podcast di Spotify
+    </a>
+  </p>
             </div>
             </div>
           </div>
