@@ -135,7 +135,7 @@ function App() {
   {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
 
   const [WinampExpand, setWinampExpand] = useState(
-  {focus: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
+  {focus: false, show: true, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
 
   const [ResumeFileExpand, setResumeFileExpand] = useState(
   {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});

@@ -9,11 +9,9 @@ function Notification() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const {
-    clearNotiTimeOut, setClearNotiTimeOut,
-    isTouchDevice,
-    handleShow, handleShowMobile,
+    setClearNotiTimeOut,
+    handleShow,
     newMessage, 
-    setNewMessage, 
     notiOn, setNotiOn,
   } = useContext(UseContext);
 

@@ -68,7 +68,7 @@ function Patch() {
           >
             <div className="folder_barname-resumefile">
                 <img src={imageMapping('Patch')} alt="Patch" />
-                <span>Patch</span>
+                <span>About</span>
             </div>
             <div className="folder_barbtn-resumefile">
               <div onClick={ !isTouchDevice? (e) => {
@@ -116,7 +116,7 @@ function Patch() {
             <div className="patch_note">
                 <div className="patch_head">
                     <img src={bulb} alt="bulb" />  
-                    <h1>Patch Updates...</h1> 
+                    <h1>About us.</h1> 
             </div>
             <div className="patch_log">
                 {patchNotes.map((note, index) => (
