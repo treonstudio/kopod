@@ -129,10 +129,6 @@ function Patch() {
   </ul>
   <p>Bareng para narasumber inspiratif, mulai dari praktisi industri, developer sukses, hingga inovator terkemuka, KOPOD akan jadi sumber wawasan yang tak ternilai buat kamu. Kami akan membahas isu-isu nyata, membedah tantangan, dan memberikan solusi yang bisa langsung kamu terapkan.</p>
   <p>Jadi, siapkan kopi terbaik kamu, pasang headphone, dan mari kita ngoprek bareng di <strong>KOPOD</strong>! Jangan sampai ketinggalan setiap episode dan jadilah bagian dari komunitas developer yang terus berkembang.</p>
-  <div style={{ margin: '1em 0' }}>
-    <strong>Host:</strong> Ridho Pratama<br/>
-    <strong>Co-host:</strong> Yute October
-  </div>
   <div style={{ marginTop: '1em' }}>
     <a href="https://open.spotify.com/show/68Qxbxj9lmsyxOI6vlG2m8?si=8oW_7VLdSfS8UoCmBvtfkA" target="_blank" rel="noopener noreferrer" style={{ color: '#1DB954', fontWeight: 'bold', textDecoration: 'underline', fontSize: '1.1em' }}>
       Dengarkan KOPOD di Spotify
