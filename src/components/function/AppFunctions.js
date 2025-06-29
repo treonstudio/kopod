@@ -28,10 +28,6 @@ import binEmp from '../../assets/bin2.png'
 import reset from '../../assets/reset.png'
 import github from '../../assets/github.png'
 import paint from '../../assets/paint.png'
-import aiagent from '../../assets/ai_robot.png'
-import cat from '../../assets/catpic.png'
-import patch from '../../assets/patch.png'
-
 
 
 // style function for bg tap
@@ -134,16 +130,13 @@ export function imageMapping (name) {
     case "Paint":
       return paint;
 
-    case "AiAgent":
-      return aiagent;
-
     case "Cat":
     case "cat":
       return cat;
 
     case "about":
-    case "about":
-      return patch;
+    case "About":
+      return About;
 
 
 

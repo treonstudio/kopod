@@ -256,35 +256,6 @@
     }
 }
 
-.mario_div {
-    position: absolute;
-    width: 450px;
-    height: 50px;
-    min-width: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 4.6rem;
-
-}
-
-@media screen and (width <= 500px) {
-    .mario_div {
-        width: 85%;
-    }
-}
-
-.mario {
-    position: relative;
-    width: 40px;
-    z-index: 9999;
-    left: -5%;
-    /* animation: tunnel 2s ease, run 5s ease infinite forwards;
-    animation-delay: 2.8s, 4.6s; */
-    opacity: 0; 
-    z-index: -2;
-    transform-origin: bottom;
-}
-
 
 
 .tunnel {

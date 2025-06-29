@@ -1,7 +1,6 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import UseContext from '../Context'
 import Webamp from 'webamp';
-import mp3 from '../assets/never-gonna-give-you-up.mp3';
 
 const WebampPlayer = () => {
 
@@ -26,7 +25,7 @@ const WebampPlayer = () => {
                 const options = {
                     initialTracks: [{
                         metaData: {
-                            artist: "Treon Studio",
+                            artist: "Rifky",
                             title: "Eps 1 - Berkenalan dengan Backend"
                         },
                         url: "https://audio.jukehost.co.uk/PLGFwFQHkylKrLVDF7kCxUxk9FXbC82y",
